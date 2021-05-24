@@ -9,14 +9,13 @@ export default (req,res,resolve) => {
   
 
   // required app-r template to work
-  resolve({
-      status: 200,
-      markup: `
-        <div id="root">${content}</div>
-        <div> other content new content 10</div>
-        <script src="http://localhost:3001/client.js"></script>
-        `
-    })
+  // resolve({
+  //     status: 200,
+  //     markup: `
+  //       <div id="root">${content}</div>
+  //       <script src="http://localhost:3001/client.js"></script>
+  //       `
+  //   })
 
 
   // required local template to work
@@ -24,4 +23,13 @@ export default (req,res,resolve) => {
   //   <div id="root">${content}</div>
   //   <script src="/client.js"></script>
   // `
+
+  return `
+    <html>
+      <body>
+        <div id="root">${content}</div>
+        <script src="/client.js"></script>
+      </body>
+    </html>
+  `;
 };
