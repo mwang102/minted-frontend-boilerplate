@@ -1,5 +1,5 @@
 import express from 'express';
-import renderer from './helpers/renderer';
+import renderApp from './helpers/renderApp';
 
 const app = express();
 
@@ -8,7 +8,7 @@ const port = process.env.PORT || 3001;
 app.use(express.static('build'));
 
 app.get('*', (req, res) => {
-  const content = renderer(req);
+  const content = renderApp(req);
 
   res.send(content);
 });

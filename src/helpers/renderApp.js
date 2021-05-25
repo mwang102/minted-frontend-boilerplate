@@ -7,29 +7,8 @@ export default (req,res,resolve) => {
     <App/>
   );
   
-
-  // required app-r template to work
-  // resolve({
-  //     status: 200,
-  //     markup: `
-  //       <div id="root">${content}</div>
-  //       <script src="http://localhost:3001/client.js"></script>
-  //       `
-  //   })
-
-
-  // required local template to work
-  // return `
-  //   <div id="root">${content}</div>
-  //   <script src="/client.js"></script>
-  // `
-
   return `
-    <html>
-      <body>
-        <div id="root">${content}</div>
-        <script src="/client.js"></script>
-      </body>
-    </html>
-  `;
+    <div id="root">${content}</div>
+    <script src="/client.js"></script>
+  `
 };

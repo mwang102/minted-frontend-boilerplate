@@ -13,15 +13,7 @@ export default (req,res,resolve) => {
       status: 200,
       markup: `
         <div id="root">${content}</div>
-        <div> other content new content 10</div>
         <script src="http://localhost:3001/client.js"></script>
         `
     })
-
-
-  // required local template to work
-  // return `
-  //   <div id="root">${content}</div>
-  //   <script src="/client.js"></script>
-  // `
 };

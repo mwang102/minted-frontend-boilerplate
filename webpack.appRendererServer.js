@@ -1,12 +1,10 @@
 const path = require('path');
-const webpackNodeExternals = require('webpack-node-externals');
 
 module.exports = {
   target: 'node',
-  entry: ['@babel/polyfill', './src/helpers/serverBundleRenderer.js'],
-//   externals: [webpackNodeExternals()],
+  entry: ['@babel/polyfill', './src/helpers/renderAppRServerBundle.js'],
   output: {
-    filename: 'server-bundle.js',
+    filename: 'appRendererServerBundle.js',
     path: path.resolve(__dirname, './build'),
     libraryTarget: 'commonjs2',
   },

@@ -2,13 +2,13 @@ import React from 'react';
 
 const App = () => {
   const logMessage = () => {
-    console.log('logging message')
+    alert('JavaScript Success')
   }
 
   return (
-    <div> 
-      <h1> App </h1>
-      <button onClick={logMessage}>Say Hello Back!</button>
+    <div className="App"> 
+      <header className="App-Header"> Minted Frontend BoilerPlate</header>
+      <button onClick={logMessage}>JavaScript OnClick</button>
     </div>
   )
 }
