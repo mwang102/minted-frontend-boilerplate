@@ -9,6 +9,7 @@ export default (req,res,resolve) => {
   
   return `
     <div id="root">${content}</div>
+    <h1> extra content </h1>
     <script src="/client.js"></script>
   `
 };

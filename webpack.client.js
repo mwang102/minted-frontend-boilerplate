@@ -1,6 +1,9 @@
 const path = require('path');
+const webpack = require('webpack');
 
 module.exports = {
+  mode: 'development',
+  watch: true,
   entry: ['@babel/polyfill', './src/client.js'],
   output: {
     filename: 'client.js',
@@ -21,5 +24,12 @@ module.exports = {
   },
   devServer: {
     port: 8080,
+    historyApiFallback: true,
+    hot: true,
+    contentBase: path.join(__dirname, 'build'),
   },
+  plugins: [
+    // new HtmlWebPackPlugin(),
+    new webpack.HotModuleReplacementPlugin(),
+  ],
 };
