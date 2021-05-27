@@ -8,7 +8,7 @@
     "build-server": "webpack --config webpack.server.js",
     "build-app-renderer-server": "webpack --config webpack.appRendererServer.js",
     "build": "yarn run build-client && yarn run build-server && yarn build-app-renderer-server",
-    "start": "node build/server.js"
+    "dev": "node build/server.js"
   },
   "dependencies": {
     "@babel/polyfill": "^7.8.3",
@@ -32,7 +32,11 @@
     "eslint-plugin-react": "^7.12.4",
     "webpack": "^4.20.2",
     "webpack-cli": "^3.1.2",
-    "webpack-dev-server": "^3.1.9"
+    "webpack-dev-server": "^3.1.9",
+    "@babel/eslint-parser": "^7.12.1",
+    "@minted/eslint-config-core": "^1.0.5",
+    "@minted/eslint-config-jest": "^1.0.5",
+    "@minted/eslint-config-react": "^1.0.5"
   },
   "keywords": [],
   "author": "",
