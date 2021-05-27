@@ -1,6 +1,6 @@
 # minted-frontend-boilerplate
 
-This is a minimal unopininated boilerplate that should allow a Minted developer to create an App-Renderer compatible application through the microfrontend cdn flow. 
+This is a minimal boilerplate that should allow a Minted developer to create an App-Renderer compatible application through the microfrontend cdn flow. 
 
 IMPORTANT: Webpack configurations
 This repository has three webpack configs, client, server, and appRendererServer that create their respective bundles. Client and server are required for this repository, while appRendererServer is a specialized bundle that is tailored toward App-r so it will correctly render the serverside bundle. 
