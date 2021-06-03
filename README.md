@@ -62,6 +62,8 @@ After:
   },
 ```
 
+* Make sure to have cdn_micro_frontends = B as a cookie in your browser. Set the domain to be .mntd.net to work for both `http://app-renderer-devxenial.mntd.net/....` and `https://web-devxenial.mntd.net/...` url paths.
+
 * Now if you navigate to `http://app-renderer-devxenial.mntd.net/render/footer` you will see your new repos application.
     Note: To have your JS working in `http://app-renderer-devxenial.mntd.net/render/footer` you will need to run this repos server with `yarn dev` 
 
