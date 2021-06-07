@@ -1,22 +1,37 @@
 const path = require('path');
+const webpack = require('webpack');
+const ReactRefreshWebpackPlugin = require('@pmmmwh/react-refresh-webpack-plugin');
 
 module.exports = {
-  entry: ['@babel/polyfill', './src/client.js'],
+  entry: [
+    'webpack-hot-middleware/client',
+     './src/client.js'
+  ],
   output: {
     filename: 'client.js',
     path: path.resolve(__dirname, './build'),
   },
+  mode: 'development',
   module: {
     rules: [
       {
-        test: /.js$/,
+        test: /.(js|jsx)$/,
         use: {
           loader: 'babel-loader',
           options: {
-            presets: ['@babel/preset-react', '@babel/preset-env'],
+            cacheDirectory: true,
+            plugins: [require.resolve('react-refresh/babel')],
           },
         },
       },
     ],
   },
+  devServer: {
+    contentBase: './build',
+    hot: true,
+  },
+  plugins: [
+    new webpack.HotModuleReplacementPlugin(),
+    new ReactRefreshWebpackPlugin({}),
+  ]
 };
