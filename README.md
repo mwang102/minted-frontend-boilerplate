@@ -3,7 +3,7 @@
 This is a minimal boilerplate that should allow a Minted developer to create an App-Renderer compatible application through the microfrontend cdn flow. 
 
 IMPORTANT: Webpack configurations
-This repository has three webpack configs, client, server and appRendererServer that create their respective bundles. Server is the only bundle required for this repository, as the server bundle builds out the client bundle. appRendererServer is a specialized bundle that is tailored toward App-r so it will correctly render the serverside bundle. 
+This repository has three webpack configs, client, server and appRendererServer that create their respective bundles. Building out the server bundle is the only requirement for this repo. The local dev server runs the build for both the server and the client, while providing a express server to serve the client and server-side bundle. The appRendererServer is a specialized bundle that is tailored toward App-r so it will correctly render the server-side bundle. 
 
 ### Installing
 
@@ -30,7 +30,7 @@ $ yarn dev
 
 This will launch a locally-running server at [`http://localhost:3001`](http://localhost:3001)
 
-## Developing locally with App-renderer [TEMPORARY IMPLEMENTATION]
+## Developing locally with App-renderer
 
 You will have to follow the steps below to get your repo rendered locally by app-renderer.
 
