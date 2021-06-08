@@ -4,7 +4,7 @@ const webpackNodeExternals = require('webpack-node-externals');
 module.exports = {
   target: 'node',
   mode: 'development',
-  entry: ['./src/helpers/renderApp.js'],
+  entry: './src/helpers/renderApp.js',
   externals: [webpackNodeExternals()],
   output: {
     filename: 'server.js',

@@ -34,7 +34,7 @@ This will launch a locally-running server at [`http://localhost:3001`](http://lo
 
 You will have to follow the steps below to get your repo rendered locally by app-renderer.
 
-* Build out serverside and app-renderer-server bundles
+* Build out server-side and app-renderer-server bundles
 
 ```
 $ yarn build-app-renderer-server

@@ -2,7 +2,7 @@ const path = require('path');
 
 module.exports = {
   target: 'node',
-  entry: ['./src/helpers/renderAppRServerBundle.js'],
+  entry: './src/helpers/renderAppRServerBundle.js',
   output: {
     filename: 'appRendererServerBundle.js',
     path: path.resolve(__dirname, './build'),
