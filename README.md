@@ -37,7 +37,8 @@ You will have to follow the steps below to get your repo rendered locally by app
 * Build out serverside and app-renderer-server bundles
 
 ```
-$ yarn build-server 
+$ yarn build-app-renderer-server
+$ yarn build-server
 ```
 
 * Navigate to `appEntries.js` in app-renderer repo and choose an appEntries `localBundlePath:` to replace with the location of your app-renderer-server bundle. 
@@ -66,4 +67,4 @@ After:
 * Now if you navigate to `http://app-renderer-devxenial.mntd.net/render/footer` you will see your new repos application.
     Note: To have your JS working in `http://app-renderer-devxenial.mntd.net/render/footer` you will need to run this repos server with `yarn dev` 
 
-* To view any new code changes on `http://app-renderer-devxenial.mntd.net/render/footer` you will need to rebuild the app-renderer-server bundle and manually refresh the app-renderer page. 
+* To view any new code changes from your new repo on `http://app-renderer-devxenial.mntd.net/render/footer` or `https://web-devxenial.mntd.net/...`, all you need to do is have your repos `yarn dev` running and then manually refresh the app-r url.
