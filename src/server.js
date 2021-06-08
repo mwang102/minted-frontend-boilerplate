@@ -20,7 +20,6 @@ app.use(webpackDevMiddleware(clientCompiler, {
 
 app.use(webpackHotMiddleware(clientCompiler))
 
-
 const port = process.env.PORT || 3001;
 
 app.get('*', (req, res) => {
