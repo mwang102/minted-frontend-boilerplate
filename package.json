@@ -4,8 +4,9 @@
   "description": "minted-frontend-boilerplate",
   "main": "index.js",
   "scripts": {
-    "build-server": "webpack --config webpack.server.js",
-    "build-app-renderer-server": "webpack --config webpack.appRendererServer.js",
+    "build:client": "webpack --config webpack.client.js",
+    "build:server": "webpack --config webpack.server.js",
+    "build:app-renderer-server": "webpack --config webpack.appRendererServer.js",
     "dev": "node src/server.js"
   },
   "dependencies": {

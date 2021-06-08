@@ -24,7 +24,7 @@ registry=https://nexus.mntd.net/repository/npm-minted-group/
 ```
 $ nvm use
 $ yarn install
-$ yarn build-server
+$ yarn build:server
 $ yarn dev
 ```
 
@@ -37,8 +37,8 @@ You will have to follow the steps below to get your repo rendered locally by app
 * Build out server-side and app-renderer-server bundles
 
 ```
-$ yarn build-app-renderer-server
-$ yarn build-server
+$ yarn build:app-renderer-server
+$ yarn build:server
 ```
 
 * Navigate to `appEntries.js` in app-renderer repo and choose an appEntries `localBundlePath:` to replace with the location of your app-renderer-server bundle. 
