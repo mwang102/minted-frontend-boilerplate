@@ -24,7 +24,6 @@ registry=https://nexus.mntd.net/repository/npm-minted-group/
 ```
 $ nvm use
 $ yarn install
-$ yarn build:server
 $ yarn dev
 ```
 
@@ -67,4 +66,4 @@ After:
 * Now if you navigate to `http://app-renderer-devxenial.mntd.net/render/footer` you will see your new repos application.
     Note: To have your JS working in `http://app-renderer-devxenial.mntd.net/render/footer` you will need to run this repos server with `yarn dev` 
 
-* To view any new code changes from your new repo on `http://app-renderer-devxenial.mntd.net/render/footer` or `https://web-devxenial.mntd.net/...`, all you need to do is have your repos `yarn dev` running and then manually refresh the app-r url.
+* To view any new code changes from your new repo on `http://app-renderer-devxenial.mntd.net/render/YOUR_APP_NAME` or `https://web-devxenial.mntd.net/...`, all you need to do is have your repos `yarn dev` running and then manually refresh the app-r url.
