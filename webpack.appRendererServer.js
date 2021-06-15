@@ -2,6 +2,7 @@ const path = require('path');
 
 module.exports = {
   target: 'node',
+  mode: 'production',
   entry: './src/helpers/renderAppRServerBundle.js',
   output: {
     filename: 'appRendererServerBundle.js',
@@ -11,15 +12,14 @@ module.exports = {
   module: {
     rules: [
       {
-        test: /.js$/,
+        test: /.(js|jsx)$/,
         use: {
           loader: 'babel-loader',
           options: {
-            presets: ['@babel/preset-react', '@babel/preset-env'],
+            cacheDirectory: true,
           },
         },
       },
     ],
   },
-  mode: 'development',
 };
