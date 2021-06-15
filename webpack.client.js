@@ -1,17 +1,17 @@
-const path = require('path');
-const webpack = require('webpack');
 const ReactRefreshWebpackPlugin = require('@pmmmwh/react-refresh-webpack-plugin');
 const ESLintPlugin = require('eslint-webpack-plugin');
+const path = require('path');
+const webpack = require('webpack');
 
 module.exports = {
+  devServer: {
+    contentBase: './build',
+    hot: true,
+  },
   entry: [
     'webpack-hot-middleware/client',
-     './src/client.js'
+    './src/clientEntrypoint.js',
   ],
-  output: {
-    filename: 'client.js',
-    path: path.resolve(__dirname, './build'),
-  },
   mode: 'development',
   module: {
     rules: [
@@ -21,19 +21,27 @@ module.exports = {
           loader: 'babel-loader',
           options: {
             cacheDirectory: true,
-            plugins: [require.resolve('react-refresh/babel')],
+            plugins: [
+              require.resolve('react-refresh/babel'),
+            ],
           },
         },
       },
     ],
   },
-  devServer: {
-    contentBase: './build',
-    hot: true,
+  output: {
+    filename: 'client.js',
+    path: path.resolve(__dirname, './build'),
   },
   plugins: [
     new webpack.HotModuleReplacementPlugin(),
     new ReactRefreshWebpackPlugin({}),
-    new ESLintPlugin({}),
-  ]
+    new ESLintPlugin({
+      extensions: [
+        '.js',
+        '.jsx',
+      ],
+      fix: true,
+    }),
+  ],
 };

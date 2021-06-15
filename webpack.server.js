@@ -2,15 +2,11 @@ const path = require('path');
 const webpackNodeExternals = require('webpack-node-externals');
 
 module.exports = {
-  target: 'node',
+  entry: './src/serverEntrypoint.js',
+  externals: [
+    webpackNodeExternals(),
+  ],
   mode: 'development',
-  entry: './src/helpers/renderApp.js',
-  externals: [webpackNodeExternals()],
-  output: {
-    filename: 'server.js',
-    path: path.resolve(__dirname, './build'),
-    libraryTarget: 'commonjs2',
-  },
   module: {
     rules: [
       {
@@ -24,4 +20,10 @@ module.exports = {
       },
     ],
   },
+  output: {
+    filename: 'server.js',
+    libraryTarget: 'commonjs2',
+    path: path.resolve(__dirname, './build'),
+  },
+  target: 'node',
 };

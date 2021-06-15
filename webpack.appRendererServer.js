@@ -1,14 +1,8 @@
 const path = require('path');
 
 module.exports = {
-  target: 'node',
+  entry: './src/serverEntrypoint.js',
   mode: 'production',
-  entry: './src/helpers/renderAppRServerBundle.js',
-  output: {
-    filename: 'appRendererServerBundle.js',
-    path: path.resolve(__dirname, './build'),
-    libraryTarget: 'commonjs2',
-  },
   module: {
     rules: [
       {
@@ -22,4 +16,10 @@ module.exports = {
       },
     ],
   },
+  output: {
+    filename: 'appRendererServerBundle.js',
+    libraryTarget: 'commonjs2',
+    path: path.resolve(__dirname, './build'),
+  },
+  target: 'node',
 };
