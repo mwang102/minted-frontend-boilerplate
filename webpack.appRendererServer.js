@@ -1,25 +1,25 @@
 const path = require('path');
 
 module.exports = {
-  target: 'node',
-  entry: ['@babel/polyfill', './src/helpers/renderAppRServerBundle.js'],
-  output: {
-    filename: 'appRendererServerBundle.js',
-    path: path.resolve(__dirname, './build'),
-    libraryTarget: 'commonjs2',
-  },
+  entry: './src/serverEntrypoint.js',
+  mode: 'production',
   module: {
     rules: [
       {
-        test: /.js$/,
+        test: /.(js|jsx)$/,
         use: {
           loader: 'babel-loader',
           options: {
-            presets: ['@babel/preset-react', '@babel/preset-env'],
+            cacheDirectory: true,
           },
         },
       },
     ],
   },
-  mode: 'development',
+  output: {
+    filename: 'appRendererServerBundle.js',
+    libraryTarget: 'commonjs2',
+    path: path.resolve(__dirname, './build'),
+  },
+  target: 'node',
 };

@@ -2,24 +2,28 @@ const path = require('path');
 const webpackNodeExternals = require('webpack-node-externals');
 
 module.exports = {
-  target: 'node',
-  entry: ['@babel/polyfill', './src/server.js'],
-  externals: [webpackNodeExternals()],
-  output: {
-    filename: 'server.js',
-    path: path.resolve(__dirname, './build'),
-  },
+  entry: './src/serverEntrypoint.js',
+  externals: [
+    webpackNodeExternals(),
+  ],
+  mode: 'development',
   module: {
     rules: [
       {
-        test: /.js$/,
+        test: /.(js|jsx)$/,
         use: {
           loader: 'babel-loader',
           options: {
-            presets: ['@babel/preset-react', '@babel/preset-env'],
+            cacheDirectory: true,
           },
         },
       },
     ],
   },
+  output: {
+    filename: 'server.js',
+    libraryTarget: 'commonjs2',
+    path: path.resolve(__dirname, './build'),
+  },
+  target: 'node',
 };

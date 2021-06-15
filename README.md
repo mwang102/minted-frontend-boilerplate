@@ -3,7 +3,7 @@
 This is a minimal boilerplate that should allow a Minted developer to create an App-Renderer compatible application through the microfrontend cdn flow. 
 
 IMPORTANT: Webpack configurations
-This repository has three webpack configs, client, server, and appRendererServer that create their respective bundles. Client and server are required for this repository, while appRendererServer is a specialized bundle that is tailored toward App-r so it will correctly render the serverside bundle. 
+This repository has three webpack configs, client, server and appRendererServer that create their respective bundles. Building out the server bundle is the only requirement for this repo. The local dev server runs the build for both the server and the client, while providing a express server to serve the client and server-side bundle. The appRendererServer is a specialized bundle that is tailored toward App-r so it will correctly render the server-side bundle. 
 
 ### Installing
 
@@ -29,16 +29,15 @@ $ yarn dev
 
 This will launch a locally-running server at [`http://localhost:3001`](http://localhost:3001)
 
-Note: To view your code changes. You will need to re-run yarn build. Currently no hot reloading/dev-server is packaged with this boilerplate
-
-## Developing locally with App-renderer [TEMPORARY IMPLEMENTATION]
+## Developing locally with App-renderer
 
 You will have to follow the steps below to get your repo rendered locally by app-renderer.
 
-* Build out clientside, serverside, and app-renderer-server bundles
+* Build out server-side and app-renderer-server bundles
 
 ```
-$ yarn build 
+$ yarn build:app-renderer-server
+$ yarn build:server
 ```
 
 * Navigate to `appEntries.js` in app-renderer repo and choose an appEntries `localBundlePath:` to replace with the location of your app-renderer-server bundle. 
@@ -67,4 +66,4 @@ After:
 * Now if you navigate to `http://app-renderer-devxenial.mntd.net/render/footer` you will see your new repos application.
     Note: To have your JS working in `http://app-renderer-devxenial.mntd.net/render/footer` you will need to run this repos server with `yarn dev` 
 
-* To view any new code changes on `http://app-renderer-devxenial.mntd.net/render/footer` you will need to rebuild the app-renderer-server bundle and manually refresh the app-renderer page. 
+* To view any new code changes from your new repo on `http://app-renderer-devxenial.mntd.net/render/YOUR_APP_NAME` or `https://web-devxenial.mntd.net/...`, all you need to do is have your repos `yarn dev` running and then manually refresh the app-r url.
